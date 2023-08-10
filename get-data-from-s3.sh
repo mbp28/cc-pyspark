@@ -30,7 +30,7 @@ for data_type in warc wat wet; do
 	file=$(gzip -dc $listing | head -1)
 	mkdir -p $(dirname $file)
 	cd $(dirname $file)
-	aws s3 cp $BASE_URL/$file
+	aws s3 cp $BASE_URL/$file ./
 	cd -
 
 	echo "Writing input file listings..."
